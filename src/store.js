@@ -21,7 +21,7 @@ export default new Vuex.Store({
     },
     actions: {
         doLogin({ commit }, payload) {
-            axios.post('http://10.30.30.34:8000/api/login', {
+            axios.post('http://localhost:8000/api/login', {
                 email: payload.email,
                 password: payload.password
             }).then(function (response) {
@@ -29,6 +29,7 @@ export default new Vuex.Store({
                 commit('setUser', response.data);
                 const dataUser = JSON.stringify(response.data);
                 localStorage.setItem("dataUser", dataUser);
+                this.$router.push('/');
             }).catch(function (error) {
                 if (error.response.status == 422) {
                     commit('setError', error.response.data.errors)

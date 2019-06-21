@@ -1,19 +1,13 @@
 <template>
-    <div class="login">
-        <p>email: admin@gmail.com</p>
-        <p>password: 123</p>
+    <div style="background:white; padding:5%">
         <h1>Login</h1>
-        <div class="form-group">
+
             <input type="text" v-model="email" placeholder="email">
-            {{ email }}
-            {{ error.email }}
-        </div>
-        <div class="form-group">
+        <br><br>
+  
             <input type="password" v-model="password" placeholder="password">
-            {{password}}
-            {{ error.password }}
-        </div>
-        <button @click="login()">Login</button>
+        <br><br>
+        <button @click="login()">Login</button> <br><br>
         {{ user }}
     </div>
 </template>
