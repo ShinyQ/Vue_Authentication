@@ -26,6 +26,7 @@
 </template>
 
 <script>
+  import checkLogin from '@/mixins/checkLogin.js'
   import axios from 'axios'
   import GetApi from '../components/GetApi'
   export default {
@@ -57,7 +58,8 @@
     },
     mounted: function () {
       this.fetchFilms()
-    }
+    },
+    mixins: [checkLogin]
   }
 </script>
 

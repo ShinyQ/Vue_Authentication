@@ -8,6 +8,7 @@
 </template>
 
 <script>
+  import checkLogin from '@/mixins/checkLogin.js'
   import axios from 'axios'
   import GetDetailApi from '../components/GetDetailApi'
   export default {
@@ -20,6 +21,7 @@
             films:[] 
         }
     }, 
+    mixins: [checkLogin]
   }
 </script>
 <style>
